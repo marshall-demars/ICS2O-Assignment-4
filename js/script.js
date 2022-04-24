@@ -5,7 +5,7 @@
 // This file contains the JS functions for index.html
 
 /**
- * Check servie worker.
+ * Check service worker.
  */
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register("/ICS2O-Assignment-4/sw.js", {
@@ -13,9 +13,22 @@ if (navigator.serviceWorker) {
   })
 }
 
+"use strict"
+
 /**
- * This function displays an alert.
+ * This function calculates random number and checks if you guessed it correctly
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+function check() {
+  // input
+  var guess = parseFloat(document.getElementById("slider").value)
+
+  // process and output
+  var random = Math.floor(Math.random() * 6) + 1
+  if (guess == random) {
+    document.getElementById("answers").innerHTML = "You are correct!"
+  }
+
+  if (guess != random) {
+    document.getElementById("answers").innerHTML = "You are incorrect!"
+  }
 }
