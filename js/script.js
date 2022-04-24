@@ -13,7 +13,7 @@ if (navigator.serviceWorker) {
   })
 }
 
-"use strict"
+;("use strict")
 
 /**
  * This function calculates random number and checks if you guessed it correctly
