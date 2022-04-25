@@ -13,7 +13,7 @@ if (navigator.serviceWorker) {
   })
 }
 
-"use strict"
+;("use strict")
 
 /**
  * This function calculates the cost of a pizza
@@ -27,35 +27,35 @@ function myButtonClicked() {
   const fourTopping = document.getElementById("four").checked
   var size
   var toppings
-  
+
   // process and output
   const TAX = 0.13
-  
+
   if (sizeLarge == true) {
-    size = 6.00
+    size = 6.0
   }
-  
+
   if (sizeLarge == false) {
-    size = 10.00
+    size = 10.0
   }
-  
-  
+
   if (oneTopping == true) {
-    toppings = 1.00
+    toppings = 1.0
   }
-  
+
   if (twoTopping == true) {
     toppings = 1.75
   }
-  
+
   if (threeTopping == true) {
-    toppings = 2.50
+    toppings = 2.5
   }
-  
+
   if (fourTopping == true) {
     toppings = 3.35
   }
 
   var total = (size + toppings) * (1 + TAX)
-  document.getElementById('cost').innerHTML = 'The total cost is $' + total.toFixed(2)
+  document.getElementById("cost").innerHTML =
+    "The total cost is $" + total.toFixed(2)
 }
