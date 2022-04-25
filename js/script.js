@@ -13,22 +13,49 @@ if (navigator.serviceWorker) {
   })
 }
 
-;("use strict")
+"use strict"
 
 /**
- * This function calculates random number and checks if you guessed it correctly
+ * This function calculates the cost of a pizza
  */
-function check() {
+function myButtonClicked() {
   // input
-  var guess = parseFloat(document.getElementById("slider").value)
-
+  const sizeLarge = document.getElementById("large").checked
+  const oneTopping = document.getElementById("one").checked
+  const twoTopping = document.getElementById("two").checked
+  const threeTopping = document.getElementById("three").checked
+  const fourTopping = document.getElementById("four").checked
+  var size
+  var toppings
+  
   // process and output
-  var random = Math.floor(Math.random() * 6) + 1
-  if (guess == random) {
-    document.getElementById("answers").innerHTML = "You are correct!"
+  const TAX = 0.13
+  
+  if (sizeLarge == true) {
+    size = 6.00
+  }
+  
+  if (sizeLarge == false) {
+    size = 10.00
+  }
+  
+  
+  if (oneTopping == true) {
+    toppings = 1.00
+  }
+  
+  if (twoTopping == true) {
+    toppings = 1.75
+  }
+  
+  if (threeTopping == true) {
+    toppings = 2.50
+  }
+  
+  if (fourTopping == true) {
+    toppings = 3.35
   }
 
-  if (guess != random) {
-    document.getElementById("answers").innerHTML = "You are incorrect!"
-  }
+  var total = (size + toppings) * (1 + TAX)
+  document.getElementById('cost').innerHTML = 'The total cost is $' + total.toFixed(2)
 }

@@ -31,21 +31,53 @@
         </div>       
       </header>
       <main class = "mdl-layout__content">
-        <img src="./images/pizza.svg" alt="sphere" width="20%" height="auto" />
+        <img src="./image/1502140004.svg" alt="pizza" width="20%" height="auto" />
         <!-- basic text -->
-        <p>Choose the size, and choose the toppings!<br>Use the slider to choose your number</p> 
-        <!-- Default Slider -->
-        <label>
-          Slider's Value
-          <input id = "slider" class="mdl-slider mdl-js-slider" type="range"
-          min="0" max="6" value="1" tabindex="0">
-        </label>
+        <h4>Choose the size, and choose the toppings!</h4> 
+                <form>
+          <div id="size-pizza">
+            <h5>Choose the size here:</h5>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="large">
+              <input type="radio" id="large" class="mdl-radio__button" name="options" value="1">
+              <span class="mdl-radio__label">Large, $6.00</span>
+            </label>
+            <br>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="extra-large">
+              <input type="radio" id="extra-large" class="mdl-radio__button" name="options" value="1">
+              <span class="mdl-radio__label">Extra large, $10.00</span>
+            </label>
+          </div>
+        </form>
         <br>
+        <form>
+          <div id="total-toppings">
+            <h5>Choose how many toppings you want here:</h5>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect2" for="one">
+              <input type="radio" id="one" class="mdl-radio__button" name="options" value="1">
+              <span class="mdl-radio__label">1 Topping, $1.00</span>
+            </label>
+            <br>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="two">
+              <input type="radio" id="two" class="mdl-radio__button" name="options" value="1">
+              <span class="mdl-radio__label">2 Toppings, $1.75</span>
+            </label>
+            <br>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="three">
+              <input type="radio" id="three" class="mdl-radio__button" name="options" value="1">
+              <span class="mdl-radio__label">3 Toppings, $2.50</span>
+            </label>
+            <br>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="four">
+              <input type="radio" id="four" class="mdl-radio__button" name="options" value="1">
+              <span class="mdl-radio__label">4 Toppings, $3.35</span>
+            </label>
+          </div>
+        </form>
         <!-- Colored raised button -->
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="check()">
-          Click to guess
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="myButtonClicked()">
+          Checkout
         </button>
-        <div id="answers"></div>
+        <div id="cost"></div>
       </main>
     </div>
   </body>
